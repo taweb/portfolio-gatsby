@@ -64,7 +64,7 @@ const SecondaryText = styled(StyledSpan)`
 const hero = () => {
     const data = useStaticQuery(graphql`
     query coverImgQuery {
-        cover: file(relativePath: { eq: "P1000766.JPG" }) {
+        cover: file(relativePath: { eq: "cover.JPG" }) {
             childImageSharp {
                 fluid {
                     ...GatsbyImageSharpFluid
