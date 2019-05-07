@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import {colors} from '../theme/Variables';
@@ -44,6 +44,7 @@ const HeaderContainer = styled.div`
 const HeaderText = styled.h1`
     color: ${colors.white};
     text-shadow: 1px 1px 2px ${colors.black};
+    margin-bottom: 10px;
 `
 
 const StyledSpan = styled.span`
@@ -59,6 +60,17 @@ const PrimaryText = styled(StyledSpan)`
 const SecondaryText = styled(StyledSpan)`
     font-size: 1.5rem;
     font-weight: 400;
+`
+
+const StyledButton = styled.button`
+    display: block;
+    background: white;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0px 1px 4px ${colors.black};
+    font-size: 1rem;
 `
 
 const hero = () => {
@@ -83,6 +95,12 @@ const hero = () => {
                     <PrimaryText>Tim Atherton</PrimaryText>
                     <SecondaryText>Web Developer</SecondaryText>
                 </HeaderText>
+                <StyledButton>
+                    <Link to='/skills'>Skills & Experience</Link>
+                </StyledButton>
+                <StyledButton>
+                    <Link to='/contact'>Get in Touch</Link>
+                </StyledButton>
             </HeaderContainer>
         </HeroWrapper>
     )

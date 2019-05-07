@@ -23,10 +23,11 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 400;
     }
 
+    ul, ol {
+        list-style-type: none;
+    }
+
     a {
         text-decoration: none;
-        :visited {
-            color: ${colors.black}
-        }
     }
 `

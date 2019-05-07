@@ -2,10 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GlobalStyle } from '../theme/GlobalStyle';
-import Header from './header';
+import Header from './header/header';
 import Footer from './footer';
+import styled from 'styled-components';
 
-const Layout = ({children, headerContent}) => {
+const Main = styled.main`
+  margin-top: 60px;
+`
+
+const Layout = ({children}) => {
   const data = useStaticQuery(graphql`
     query titleQuery {
       site {
@@ -20,10 +25,9 @@ const Layout = ({children, headerContent}) => {
     <>
         <GlobalStyle />
         <Header siteTitle={data.site.siteMetadata.title} />
-        {headerContent}
-        <main>
+        <Main>
           {children}
-        </main>
+        </Main>
         <Footer/>
       </>
   )
