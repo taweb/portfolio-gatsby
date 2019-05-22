@@ -1,15 +1,19 @@
 import React from 'react';
 import styled from 'styled-components'
-import {colors} from '../../theme/Variables';
+import {colors, breakPoints} from '../../theme/Variables';
 
 const Wrapper = styled.div`
-    height: 3rem;
-    width: 3rem;
+    height: 4.5rem;
+    width: 4.5rem;
     padding: ${(props) => props.isOpen ? `0rem` : `0.25rem`};
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+
+    @media (${breakPoints.desktop}) {
+        display: none;
+    }
 `
 
 const Line = styled.div`

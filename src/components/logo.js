@@ -6,6 +6,7 @@ import {colors} from '../theme/Variables';
 const StyledLogo = styled.div`
   a {
     transition: color 0.3s ease-out;
+    font-size: 2rem;
     :link,
     :visited,
     :focus {

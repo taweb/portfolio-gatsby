@@ -58,7 +58,7 @@ const PrimaryText = styled(StyledSpan)`
 `
 
 const SecondaryText = styled(StyledSpan)`
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 400;
 `
 
@@ -70,7 +70,7 @@ const StyledButton = styled.button`
     border-radius: 0.5rem;
     border: none;
     box-shadow: 0px 1px 4px ${colors.black};
-    font-size: 1rem;
+    font-size: 1.6rem;
 `
 
 const hero = () => {

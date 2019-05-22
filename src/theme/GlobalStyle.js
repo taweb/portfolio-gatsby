@@ -8,18 +8,21 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-size: inherit;
+    }
+
+    html {
+        font-size: 62.5%;
     }
 
     body {
         font-family: Poppins, sans-serif;
         font-weight: 400;
-        font-size: 16px;
         color: ${colors.black};
         @font-face {
             font-family: 'Poppins, sans-serif';
             src: url('https://fonts.googleapis.com/css?family=Poppins:400,700');
         }
-        font-size: 16px;
         font-weight: 400;
     }
 
