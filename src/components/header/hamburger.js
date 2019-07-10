@@ -22,7 +22,7 @@ const Line = styled.div`
     height: 2px;
     transform: ${(props) => props.isOpen ? `rotate(135deg)` : `rotate(0deg)`};
     transition: transform 0.5s ease;
-    background-color: ${(props) => props.isOpen ? `${colors.white}` : `${colors.black}`};
+    background-color: ${colors.black};
     ${Wrapper}:hover & {
         transform: ${(props) => props.isOpen && `rotate(225deg)`};
     }

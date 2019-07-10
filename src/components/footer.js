@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
     text-align: center;
-    padding: 2em;
+    padding: 1em;
 `
 
-const Footer = () => {
+const Footer = ({className}) => {
     return (
-        <StyledFooter>
+        <StyledFooter className={className}>
             <p>{new Date().getFullYear()} Tim Atherton</p>
         </StyledFooter>
     );

@@ -1,20 +1,15 @@
 import React, {Component} from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import {colors} from '../theme/Variables';
+import {colors, fontSizes} from '../theme/Variables';
 
 const StyledLogo = styled.div`
   a {
     transition: color 0.3s ease-out;
-    font-size: 2rem;
+    font-size: ${fontSizes.medium};
     :link,
-    :visited,
-    :focus {
+    :visited {
       color: ${(props) => props.isOpen ? `${colors.white}` : `${colors.black}`}
-    }
-    :hover,
-    :active {
-      color: ${colors.grey}
     }
   }
 `

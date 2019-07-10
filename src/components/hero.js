@@ -1,8 +1,9 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import {colors} from '../theme/Variables';
+import CustomLink from './link';
+import {colors, fontSizes} from '../theme/Variables';
 
 const HeroWrapper = styled.div`
     position: relative;
@@ -38,7 +39,9 @@ const HeaderContainer = styled.div`
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center; 
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
 `
 
 const HeaderText = styled.h1`
@@ -52,25 +55,14 @@ const StyledSpan = styled.span`
 `
 
 const PrimaryText = styled(StyledSpan)`
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 10px;    
+    font-size: ${fontSizes.large};
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
 `
 
 const SecondaryText = styled(StyledSpan)`
-    font-size: 2rem;
-    font-weight: 400;
-`
-
-const StyledButton = styled.button`
-    display: block;
-    background: white;
-    margin: 0.5rem auto;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: none;
-    box-shadow: 0px 1px 4px ${colors.black};
-    font-size: 1.6rem;
+    font-size: ${fontSizes.medium};
 `
 
 const hero = () => {
@@ -84,7 +76,7 @@ const hero = () => {
             }
         }
     }
-  `)
+  `)    
 
     return (
         <HeroWrapper>
@@ -95,12 +87,8 @@ const hero = () => {
                     <PrimaryText>Tim Atherton</PrimaryText>
                     <SecondaryText>Web Developer</SecondaryText>
                 </HeaderText>
-                <StyledButton>
-                    <Link to='/skills'>Skills & Experience</Link>
-                </StyledButton>
-                <StyledButton>
-                    <Link to='/contact'>Get in Touch</Link>
-                </StyledButton>
+                <CustomLink to='/skills' color={colors.white}>Skills & Experience</CustomLink>
+                <CustomLink to='/contact' color={colors.white}>Get in Touch</CustomLink>
             </HeaderContainer>
         </HeroWrapper>
     )

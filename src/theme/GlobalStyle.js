@@ -4,11 +4,13 @@ import { colors } from './Variables.js';
 
 
 export const GlobalStyle = createGlobalStyle`
-    * {
+    *,
+    *::after,
+    *::before {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
-        font-size: inherit;
+        box-sizing: inherit;
+        font-weight: inherit;
     }
 
     html {
@@ -16,14 +18,15 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: Poppins, sans-serif;
+        font-family: 'Source Code Pro', monospace;
         font-weight: 400;
         color: ${colors.black};
         @font-face {
-            font-family: 'Poppins, sans-serif';
-            src: url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+            font-family: 'Source Code Pro', monospace;
+            src: url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
         }
-        font-weight: 400;
+        height: 100%;
+        box-sizing: border-box;
     }
 
     ul, ol {

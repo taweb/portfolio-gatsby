@@ -1,38 +1,29 @@
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {colors} from '../../theme/Variables';
+import {colors, fontSizes, breakPoints, layout} from '../../theme/Variables';
 import Hamburger from './hamburger';
 import Logo from '../logo';
+import CustomLink from '../link';
+import SocialLinks from '../socialLinks';
 
 const HeaderWrapper = styled.header`
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
+  padding: 1rem;
   position: fixed;
   top: 0;
-  height: 60px;
+  height: ${layout.headerHeight};
   width: 100%;
   z-index: 101;
-  box-shadow: ${(props) => props.isOpen ? 'none' : `0px 1px 2px ${colors.black}`};
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${(props) => props.isOpen ? 'none' : `${colors.white}`};
+  background-color: ${colors.grey};
   transition: background-color 0.5s ease;
-`
-
-const Navigation = styled.nav`
-  a {
-    transition: color 0.3s ease-out;
-    :link,
-    :visited,
-    :focus {
-      color: ${colors.white};
-    }
-    :hover,
-    :active {
-      color: ${colors.grey}
-    }
+  @media (${breakPoints.desktop}) {
+      flex-direction: column;
+      padding: 1rem;
+      text-align: center;
   }
 `
 
@@ -55,23 +46,26 @@ const ModelMenu = styled.div`
 const ListItem = styled.li`
   padding: 0.5rem;
   font-weight: 400;
-  font-size: 2rem;
-  color: ${colors.white};
+  font-size: ${fontSizes.medium};
 `
-const StyledLink = styled(Link)`
-  :visited,
-  :active {
-    color: inherit;
-  }
-  :hover {
-    color: ${colors.grey};
-  }
-  ::after {
-    content: '//';
-    margin-left: 10px;
+
+const HeaderNavigation = styled.nav`
+  display: none;
+  @media (${breakPoints.desktop}) {
+      display: block;
   }
 `
 
+const StyledSocialLinks = styled(SocialLinks)`
+  display: none;
+  @media (${breakPoints.desktop}) {
+      display: flex;
+  }
+`
+
+const activeStyle = {
+  'fontWeight': 'bold'
+}
 
 class Header extends Component {
   constructor(props) {
@@ -88,56 +82,96 @@ class Header extends Component {
   }
 
   render() {
-    const {siteTitle} = this.props
+    const {siteTitle, className} = this.props
     const isOpen = this.state.checked
 
     return (
       <>
-        <HeaderWrapper isOpen={isOpen}>
+        <HeaderWrapper className={className}>
           <Logo 
-            isOpen={isOpen}
             onClickHandler={this.toggle}
             siteTitle={siteTitle}
           />
+          <HeaderNavigation>
+            <ul>
+              <ListItem>
+                <CustomLink 
+                  to="/skills"
+                  activeStyle={activeStyle}
+                >
+                  Skills &amp; Experience
+                </CustomLink>
+              </ListItem>
+              <ListItem>
+                <CustomLink 
+                  to="/projects"
+                  activeStyle={activeStyle}
+                >
+                  Projects
+                </CustomLink>
+              </ListItem> 
+              <ListItem>
+                <CustomLink
+                  to="/about"
+                  activeStyle={activeStyle}
+                >
+                  About
+                </CustomLink>
+              </ListItem>
+              <ListItem>
+                <CustomLink
+                  to="/contact"
+                  activeStyle={activeStyle}
+                >
+                  Contact
+                </CustomLink>
+              </ListItem>           
+            </ul>
+          </HeaderNavigation>
+          <StyledSocialLinks />
           <Hamburger isOpen={isOpen} onClickHandler={this.toggle}/>
         </HeaderWrapper>
         <ModelMenu isOpen={isOpen}>
-          <Navigation>
+          <nav>
             <ul>
               <ListItem>
-                <StyledLink 
+                <CustomLink 
                   to="/skills"
-                  onClick={this.toggle}
+                  color={colors.white}
+                  activeStyle={activeStyle}
                 >
                   Skills
-                </StyledLink>
+                </CustomLink>
               </ListItem>
               <ListItem>
-                <StyledLink 
+                <CustomLink 
                   to="/projects"
-                  onClick={this.toggle}
+                  color={colors.white}
+                  activeStyle={activeStyle}
                 >
                   Projects
-                </StyledLink>
+                </CustomLink>
               </ListItem> 
               <ListItem>
-                <StyledLink
+                <CustomLink
                   to="/about"
-                  onClick={this.toggle}
+                  color={colors.white}
+                  activeStyle={activeStyle}
                 >
                   About
-                </StyledLink>
+                </CustomLink>
               </ListItem>
               <ListItem>
-                <StyledLink
+                <CustomLink
                   to="/contact"
-                  onClick={this.toggle}
+                  color={colors.white}
+                  activeStyle={activeStyle}
                 >
                   Contact
-                </StyledLink>
+                </CustomLink>
               </ListItem>           
             </ul>
-          </Navigation>
+          </nav>
         </ModelMenu>
       </>
     )

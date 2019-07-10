@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-    /* background-color: green; */
     padding: 1.5rem 1rem; 
 `
 
@@ -23,9 +22,6 @@ const SkillsList = styled.div`
 
 const Paragraph = styled.p`
     margin-bottom: 1rem;
-    p+p {
-
-    }
 `
 
 const Skills = () => {
