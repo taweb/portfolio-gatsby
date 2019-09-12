@@ -10,13 +10,15 @@ const breakPoints = {
 }
 
 const fontSizes = {
-    large: '4rem',
-    medium: '2.5rem',
-    normal: '1.5rem'
+    xlarge: '3rem',
+    large: '2.5rem',
+    medium: '1.5rem',
+    normal: '1.3rem'
 }
 
 const layout = {
-    sidebarWidth: '225px',
+    // sidebarWidth: '225px',
+    sidebarWidth: '150px',
     headerHeight: '60px'
 }
 

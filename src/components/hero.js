@@ -42,6 +42,7 @@ const HeaderContainer = styled.div`
     width: 100%;
     text-align: center;
     padding: 0 20px;
+    font-size: ${fontSizes.medium};
 `
 
 const HeaderText = styled.h1`
@@ -55,14 +56,14 @@ const StyledSpan = styled.span`
 `
 
 const PrimaryText = styled(StyledSpan)`
-    font-size: ${fontSizes.large};
+    font-size: ${fontSizes.xlarge};
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 5px;
 `
 
 const SecondaryText = styled(StyledSpan)`
-    font-size: ${fontSizes.medium};
+    font-size: ${fontSizes.large};
 `
 
 const hero = () => {

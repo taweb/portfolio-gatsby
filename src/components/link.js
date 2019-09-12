@@ -1,31 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import {colors, fontSizes} from '../theme/Variables';
+import {colors} from '../theme/Variables';
 import { Link } from 'gatsby';
 
-const StyledLink = styled(({color, ...rest}) => <Link {...rest} />)`
-    font-size: ${fontSizes.normal};
+const StyledLink = styled(({color, type, ...rest}) => <Link {...rest} />)`
     margin: 5px 10px;
-    position: relative;
-    :link,
-    :visited,
-    :hover,
-    :active {
-        color: ${({color}) => color || `${colors.black}`};
-    }
-    ::after {
-        position: absolute;
-        top: 100%;
-        width: 100%;
-        left: 0;
-        height: 2px;
-        content: '';
+    color: ${({color}) => color || `${colors.black}`};
+    &::after, &::before {
+        display: ${({type}) => type === 'none' ? 'none' : 'block'};
         background-color: ${({color}) => color || `${colors.black}`};
-        opacity: 0;
-        transition: opacity 0.2s ease;
     }
-    :hover::after {
-        opacity: 1;
+    &::after {
+        display: ${({type}) => type === 'underline' || type === 'none' ? 'none' : 'block'}
     }
 `;
 

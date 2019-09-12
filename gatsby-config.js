@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Tim Atherton Portfolio`,
+    title: `Tim Atherton`,
     description: `Portfolio Site using Gatsbyjs`,
     author: `Tim Atherton`,
   },
@@ -13,6 +13,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

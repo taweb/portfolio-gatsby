@@ -1,17 +1,12 @@
 import React, {Component} from 'react';
-import { Link } from 'gatsby';
+import CustomLink from './link';
 import styled from 'styled-components';
 import {colors, fontSizes} from '../theme/Variables';
 
 const StyledLogo = styled.div`
-  a {
-    transition: color 0.3s ease-out;
-    font-size: ${fontSizes.medium};
-    :link,
-    :visited {
-      color: ${(props) => props.isOpen ? `${colors.white}` : `${colors.black}`}
+    a {
+        font-size: ${fontSizes.large};
     }
-  }
 `
 
 class Logo extends Component {
@@ -30,11 +25,12 @@ class Logo extends Component {
                 isOpen={isOpen}
                 onClick={this.toggle}
             >
-                <Link
+                <CustomLink
                     to="/"
+                    type={'none'}
                 >
-                {siteTitle}
-                </Link>
+                    {siteTitle}
+                </CustomLink>
             </StyledLogo>
         );
     }

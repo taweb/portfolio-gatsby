@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {colors, fontSizes, breakPoints, layout} from '../../theme/Variables';
+import {colors, breakPoints, layout, fontSizes} from '../../theme/Variables';
 import Hamburger from './hamburger';
 import Logo from '../logo';
 import CustomLink from '../link';
@@ -45,7 +45,6 @@ const ModelMenu = styled.div`
   
 const ListItem = styled.li`
   padding: 0.5rem;
-  font-weight: 400;
   font-size: ${fontSizes.medium};
 `
 
@@ -64,7 +63,8 @@ const StyledSocialLinks = styled(SocialLinks)`
 `
 
 const activeStyle = {
-  'fontWeight': 'bold'
+  'fontWeight': 'bold',
+  'textTransform': 'uppercase'
 }
 
 class Header extends Component {
@@ -98,6 +98,7 @@ class Header extends Component {
                 <CustomLink 
                   to="/skills"
                   activeStyle={activeStyle}
+                  type={'underline'}
                 >
                   Skills &amp; Experience
                 </CustomLink>
@@ -106,6 +107,7 @@ class Header extends Component {
                 <CustomLink 
                   to="/projects"
                   activeStyle={activeStyle}
+                  type={'underline'}
                 >
                   Projects
                 </CustomLink>
@@ -114,6 +116,7 @@ class Header extends Component {
                 <CustomLink
                   to="/about"
                   activeStyle={activeStyle}
+                  type={'underline'}
                 >
                   About
                 </CustomLink>
@@ -122,6 +125,7 @@ class Header extends Component {
                 <CustomLink
                   to="/contact"
                   activeStyle={activeStyle}
+                  type={'underline'}
                 >
                   Contact
                 </CustomLink>
@@ -139,6 +143,7 @@ class Header extends Component {
                   to="/skills"
                   color={colors.white}
                   activeStyle={activeStyle}
+                  type={'underline'}
                 >
                   Skills
                 </CustomLink>
@@ -148,6 +153,7 @@ class Header extends Component {
                   to="/projects"
                   color={colors.white}
                   activeStyle={activeStyle}
+                  type={'underline'}
                 >
                   Projects
                 </CustomLink>
@@ -157,6 +163,7 @@ class Header extends Component {
                   to="/about"
                   color={colors.white}
                   activeStyle={activeStyle}
+                  type={'underline'}
                 >
                   About
                 </CustomLink>
@@ -166,6 +173,7 @@ class Header extends Component {
                   to="/contact"
                   color={colors.white}
                   activeStyle={activeStyle}
+                  type={'underline'}
                 >
                   Contact
                 </CustomLink>
