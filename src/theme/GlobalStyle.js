@@ -1,15 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 import { colors, fontSizes, breakPoints } from './Variables.js';
 
-const line = () => `
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    left: 0;
-    height: 2px;
-    content: '';
-    background-color: ${colors.black};
-`
+// const line = () => `
+//     position: absolute;
+//     top: 100%;
+//     width: 100%;
+//     left: 0;
+//     height: 2px;
+//     content: '';
+//     background-color: ${colors.black};
+// `
 
 export const GlobalStyle = createGlobalStyle`
     *,
@@ -39,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
 
     h1 {
         font-size: ${fontSizes.xlarge};
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     h2 {
@@ -53,6 +53,7 @@ export const GlobalStyle = createGlobalStyle`
 
     p {
         font-size: ${fontSizes.normal};
+        margin-bottom: 1rem;
     }
 
     ul, ol {
@@ -62,28 +63,14 @@ export const GlobalStyle = createGlobalStyle`
     a {
         color: ${colors.black};
         text-decoration: none;
-        font-size: inherit;
-        position: relative;
-        &::before {
-            ${line};
-        }
+        background-image: linear-gradient(${colors.black}, ${colors.black}), linear-gradient(${colors.grey}, ${colors.grey});
+        background-position: 0% 100%, 0% 100%;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100% 2px, 100% 0px;
         @media (${breakPoints.desktop}) {
-            &::before, &::after {
-                transform: scale(0.85);
-                transition: transform 0.3s;
-            }
-            &::after {
-                ${line};
-                opacity: 0;
-                transition: transform 0.3s, top 0.3s, opacity 0.3s;
-            }
-            &:hover::before,
-            &:hover::after {
-                transform: scale(1.05);
-            }
-            &:hover::after {
-                opacity: 1;
-                top: 0%;
+            transition: background-size .3s;
+            &:hover {
+                background-size: 100% 2px, 100% 100%;
             }
         }
     }

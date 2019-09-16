@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import {colors} from '../theme/Variables';
+import {colors, breakPoints} from '../theme/Variables';
 import { Link } from 'gatsby';
 
-const StyledLink = styled(({color, type, ...rest}) => <Link {...rest} />)`
+const StyledLink = styled(({color, type, highlight, ...rest}) => <Link {...rest} />)`
     margin: 5px 10px;
     color: ${({color}) => color || `${colors.black}`};
-    &::after, &::before {
-        display: ${({type}) => type === 'none' ? 'none' : 'block'};
-        background-color: ${({color}) => color || `${colors.black}`};
-    }
-    &::after {
-        display: ${({type}) => type === 'underline' || type === 'none' ? 'none' : 'block'}
-    }
+    background-image: ${({color, type, highlight}) =>
+        type === 'underline' ?
+        `linear-gradient(${color || colors.black}, ${color || colors.black})`
+        : type === 'normal' ?
+        `linear-gradient(${color || colors.black}, ${color || colors.black}), linear-gradient(${highlight || colors.grey}, ${highlight || colors.grey})`
+        : type === 'none' ?
+        'none' : ''
+    };
 `;
 
 const CustomLink = (props) => {     

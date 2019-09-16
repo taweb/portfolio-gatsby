@@ -98,7 +98,8 @@ class Header extends Component {
                 <CustomLink 
                   to="/skills"
                   activeStyle={activeStyle}
-                  type={'underline'}
+                  type={'normal'}
+                  highlight={colors.red}
                 >
                   Skills &amp; Experience
                 </CustomLink>
@@ -107,7 +108,8 @@ class Header extends Component {
                 <CustomLink 
                   to="/projects"
                   activeStyle={activeStyle}
-                  type={'underline'}
+                  type={'normal'}
+                  highlight={colors.red}
                 >
                   Projects
                 </CustomLink>
@@ -116,7 +118,8 @@ class Header extends Component {
                 <CustomLink
                   to="/about"
                   activeStyle={activeStyle}
-                  type={'underline'}
+                  type={'normal'}
+                  highlight={colors.red}
                 >
                   About
                 </CustomLink>
@@ -125,7 +128,8 @@ class Header extends Component {
                 <CustomLink
                   to="/contact"
                   activeStyle={activeStyle}
-                  type={'underline'}
+                  type={'normal'}
+                  highlight={colors.red}
                 >
                   Contact
                 </CustomLink>
@@ -143,7 +147,7 @@ class Header extends Component {
                   to="/skills"
                   color={colors.white}
                   activeStyle={activeStyle}
-                  type={'underline'}
+                  type={'none'}
                 >
                   Skills
                 </CustomLink>
@@ -153,7 +157,7 @@ class Header extends Component {
                   to="/projects"
                   color={colors.white}
                   activeStyle={activeStyle}
-                  type={'underline'}
+                  type={'none'}
                 >
                   Projects
                 </CustomLink>
@@ -163,7 +167,7 @@ class Header extends Component {
                   to="/about"
                   color={colors.white}
                   activeStyle={activeStyle}
-                  type={'underline'}
+                  type={'none'}
                 >
                   About
                 </CustomLink>
@@ -173,7 +177,7 @@ class Header extends Component {
                   to="/contact"
                   color={colors.white}
                   activeStyle={activeStyle}
-                  type={'underline'}
+                  type={'none'}
                 >
                   Contact
                 </CustomLink>

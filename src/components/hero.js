@@ -88,8 +88,8 @@ const hero = () => {
                     <PrimaryText>Tim Atherton</PrimaryText>
                     <SecondaryText>Web Developer</SecondaryText>
                 </HeaderText>
-                <CustomLink to='/skills' color={colors.white}>Skills & Experience</CustomLink>
-                <CustomLink to='/contact' color={colors.white}>Get in Touch</CustomLink>
+                <CustomLink to='/skills' type={'normal'} color={colors.white} highlight={colors.red}>Skills & Experience</CustomLink>
+                <CustomLink to='/contact' type={'normal'} color={colors.white} highlight={colors.red}>Get in Touch</CustomLink>
             </HeaderContainer>
         </HeroWrapper>
     )

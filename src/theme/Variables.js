@@ -6,7 +6,9 @@ const colors = {
 }
 
 const breakPoints = {
-    desktop: 'min-width: 768px'
+    xldesktop: 'min-width: 1024px',
+    desktop: 'min-width: 768px',
+    tablet: 'min-width: 500px'
 }
 
 const fontSizes = {
@@ -17,8 +19,7 @@ const fontSizes = {
 }
 
 const layout = {
-    // sidebarWidth: '225px',
-    sidebarWidth: '150px',
+    sidebarWidth: '225px',
     headerHeight: '60px'
 }
 
