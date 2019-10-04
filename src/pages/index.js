@@ -7,7 +7,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Hero/>
-      <SEO title="Tim Atherton" keywords={[`Tim Atherton`, `Portfolio`, `Web Developer`]} />
+      <SEO title="Home" keywords={[`Tim Atherton`, `Portfolio`, `Web Developer`]} />
     </Layout>
   )
 }

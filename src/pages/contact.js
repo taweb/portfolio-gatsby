@@ -6,7 +6,7 @@ import PageContent from '../components/pageContent'
 const ContactPage = () => {
     return (
         <Layout>
-            <SEO title="Contact Page" />
+            <SEO title="Contact" />
             <PageContent>
                 <p>Contact page</p>
             </PageContent>

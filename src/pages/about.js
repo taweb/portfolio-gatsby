@@ -7,7 +7,7 @@ import About from '../components/about'
 const AboutPage = () => {
     return (
         <Layout>
-            <SEO title="About Page" />
+            <SEO title="About" />
             <PageContent>
                 <About/>
             </PageContent>
