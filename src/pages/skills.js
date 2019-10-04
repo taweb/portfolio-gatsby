@@ -5,7 +5,7 @@ import Skills from '../components/skills';
 import PageContent from '../components/pageContent';
 import Work from '../components/work';
 
-const SkillsPage = ({data}) => {
+const SkillsPage = ({data}) => {    
     const workData = data.allMarkdownRemark.nodes[0]
     return (
         <Layout>

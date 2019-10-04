@@ -8,7 +8,7 @@ const colors = {
 const breakPoints = {
     xldesktop: 'min-width: 1024px',
     desktop: 'min-width: 768px',
-    tablet: 'min-width: 500px'
+    tablet: 'min-width: 660px'
 }
 
 const fontSizes = {
@@ -18,9 +18,14 @@ const fontSizes = {
     normal: '1.3rem'
 }
 
+const linkColors = {
+    repo: '#e7503a',
+    app: '#383535'
+}
+
 const layout = {
     sidebarWidth: '225px',
     headerHeight: '60px'
 }
 
-export { colors, breakPoints, layout, fontSizes };
+export { colors, breakPoints, layout, fontSizes, linkColors };
