@@ -66,7 +66,7 @@ const SecondaryText = styled(StyledSpan)`
     font-size: ${fontSizes.large};
 `
 
-const hero = () => {
+const Hero = () => {
     const data = useStaticQuery(graphql`
     query coverImgQuery {
         cover: file(relativePath: { eq: "cover.JPG" }) {
@@ -78,7 +78,6 @@ const hero = () => {
         }
     }
   `)    
-
     return (
         <HeroWrapper>
             <StyledImg fluid={data.cover.childImageSharp.fluid} alt='Cover Image'/>
@@ -94,5 +93,5 @@ const hero = () => {
         </HeroWrapper>
     )
 }
-export default hero
+export default Hero
  
