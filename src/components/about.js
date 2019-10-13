@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import { colors, fontSizes, breakPoints } from '../theme/Variables.js';
 
 const StyledImg = styled(Img)`
-    border: 3px solid ${colors.black};
+    border: 2px solid ${colors.black};
     border-radius: 50%;
 `
 

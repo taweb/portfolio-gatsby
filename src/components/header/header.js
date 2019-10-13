@@ -41,6 +41,9 @@ const ModelMenu = styled.div`
   display: flex;
   transform: ${(props) => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease;
+  @media (${breakPoints.desktop}) {
+    display: none;
+  }
 `
   
 const ListItem = styled.li`
@@ -91,6 +94,7 @@ class Header extends Component {
           <Logo 
             onClickHandler={this.toggle}
             siteTitle={siteTitle}
+            isOpen={isOpen}
           />
           <HeaderNavigation>
             <ul>
@@ -148,6 +152,7 @@ class Header extends Component {
                   color={colors.white}
                   activeStyle={activeStyle}
                   type={'none'}
+                  onClick={this.toggle}
                 >
                   Skills
                 </CustomLink>
@@ -158,6 +163,7 @@ class Header extends Component {
                   color={colors.white}
                   activeStyle={activeStyle}
                   type={'none'}
+                  onClick={this.toggle}
                 >
                   Projects
                 </CustomLink>
@@ -168,6 +174,7 @@ class Header extends Component {
                   color={colors.white}
                   activeStyle={activeStyle}
                   type={'none'}
+                  onClick={this.toggle}
                 >
                   About
                 </CustomLink>
@@ -178,6 +185,7 @@ class Header extends Component {
                   color={colors.white}
                   activeStyle={activeStyle}
                   type={'none'}
+                  onClick={this.toggle}
                 >
                   Contact
                 </CustomLink>

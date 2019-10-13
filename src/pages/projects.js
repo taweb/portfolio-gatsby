@@ -1,12 +1,11 @@
 import React from 'react'
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageContent from '../components/pageContent'
 import { graphql } from 'gatsby';
 import ProjectList from '../components/projects/projectList';
 
 const ProjectsPage = ({data}) => (
-    <Layout>
+    <>
         <SEO title="Projects" />
         <PageContent>
             <h1>Projects</h1>
@@ -14,7 +13,7 @@ const ProjectsPage = ({data}) => (
             <p>Below are a selection of personal projects or tutorials which I have been working on.</p>
             <ProjectList images={data}/>
         </PageContent>
-    </Layout>
+    </>
 );
  
 export default ProjectsPage;

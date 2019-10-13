@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CustomLink from './link';
 import styled from 'styled-components';
-import {colors, fontSizes} from '../theme/Variables';
+import { fontSizes } from '../theme/Variables';
 
 const StyledLogo = styled.div`
     a {
@@ -19,15 +19,13 @@ class Logo extends Component {
     }
 
     render() {
-        const {siteTitle, isOpen} = this.props
+        const {siteTitle} = this.props
         return (
-            <StyledLogo 
-                isOpen={isOpen}
-                onClick={this.toggle}
-            >
+            <StyledLogo>
                 <CustomLink
                     to="/"
                     type={'none'}
+                    onClick={this.toggle}
                 >
                     {siteTitle}
                 </CustomLink>

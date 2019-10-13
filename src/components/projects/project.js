@@ -2,6 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { colors, fontSizes, linkColors, breakPoints } from '../../theme/Variables.js';
+import CustomLink from '../link';
 
 const capitalize = (s) => {
     if (typeof s !== 'string') return ''
@@ -9,7 +10,7 @@ const capitalize = (s) => {
   }
 
 const ProjectContainer = styled.figure`
-    border: 3px solid black;
+    border: 2px solid ${colors.black};
     max-width: 300px;
     margin: 20px auto;
     page-break-inside: avoid;
@@ -19,18 +20,21 @@ const ProjectContainer = styled.figure`
     }
 `
 
-const ProjectInfo = styled.figcaption`
-    text-align: center;
-`
 const LinkContainer = styled.div`
     display: flex;
     justify-content: space-evenly;
+`
+
+const ProjectCaption = styled.figcaption`
+    text-align: center;
+    font-size: ${fontSizes.medium};
 `
 
 const ButtonContainer = styled.a`
     width: 100%;
     padding: 1.5rem 0;
     text-decoration: none;
+    text-align: center;
     font-size: ${fontSizes.normal};
     background: ${colors.black};
     color: ${colors.white};
@@ -50,27 +54,28 @@ const ButtonContainer = styled.a`
 
 const Project = ({children, project, image}) => {
     const imageSizes = image.node.childImageSharp.sizes
+    const repoUrl = project.links.find(link => link.name || null === 'repo').url || null
     return (
         <ProjectContainer>
-            <Img
-                title={project.name}
-                alt={'Project Screenshot'}
-                sizes={imageSizes}
-            />
-            <ProjectInfo>
-                <h3>{project.name}</h3>
-                <LinkContainer>
-                    {project.links.map((link, i) => {
-                        const linkType = link.name;
-                        const linkColor = linkColors[linkType] || "";                       
-                        return (
-                            <ButtonContainer href={`${link.url}`} key={i} style={{background: `${linkColor}`}}>
-                                {capitalize(link.name)}
-                            </ButtonContainer>
-                        )
-                    })}
-                </LinkContainer>
-            </ProjectInfo>
+            <CustomLink as='a' type={'none'} href={repoUrl}>
+                <Img
+                    title={project.name}
+                    alt={'Project Screenshot'}
+                    sizes={imageSizes}
+                />
+                <ProjectCaption>{project.name}</ProjectCaption>
+            </CustomLink>
+            <LinkContainer>
+                {project.links.map((link, i) => {
+                    const linkType = link.name;
+                    const linkColor = linkColors[linkType] || "";                       
+                    return (
+                        <ButtonContainer href={`${link.url}`} key={i} style={{background: `${linkColor}`}}>
+                            {capitalize(link.name)}
+                        </ButtonContainer>
+                    )
+                })}
+            </LinkContainer>
         </ProjectContainer>
     );
 }

@@ -66,6 +66,10 @@ const SecondaryText = styled(StyledSpan)`
     font-size: ${fontSizes.large};
 `
 
+const StyledCustomLink = styled(CustomLink)`
+    margin: 0px 10px;
+`
+
 const Hero = () => {
     const data = useStaticQuery(graphql`
     query coverImgQuery {
@@ -87,8 +91,8 @@ const Hero = () => {
                     <PrimaryText>Tim Atherton</PrimaryText>
                     <SecondaryText>Web Developer</SecondaryText>
                 </HeaderText>
-                <CustomLink to='/skills' type={'normal'} color={colors.white} highlight={colors.red}>Skills & Experience</CustomLink>
-                <CustomLink to='/contact' type={'normal'} color={colors.white} highlight={colors.red}>Get in Touch</CustomLink>
+                <StyledCustomLink to='/skills' type={'normal'} color={colors.white} highlight={colors.red}>Skills & Experience</StyledCustomLink>
+                <StyledCustomLink to='/contact' type={'normal'} color={colors.white} highlight={colors.red}>Get in Touch</StyledCustomLink>
             </HeaderContainer>
         </HeroWrapper>
     )

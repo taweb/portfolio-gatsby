@@ -1,16 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { colors, fontSizes, breakPoints } from './Variables.js';
 
-// const line = () => `
-//     position: absolute;
-//     top: 100%;
-//     width: 100%;
-//     left: 0;
-//     height: 2px;
-//     content: '';
-//     background-color: ${colors.black};
-// `
-
 export const GlobalStyle = createGlobalStyle`
     *,
     *::after,
@@ -35,6 +25,10 @@ export const GlobalStyle = createGlobalStyle`
         }
         height: 100%;
         box-sizing: border-box;
+    }
+
+    strong { 
+        font-weight: bold;
     }
 
     h1 {
