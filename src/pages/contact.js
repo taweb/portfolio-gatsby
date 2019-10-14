@@ -10,12 +10,13 @@ const ContactPage = () => {
                 <h1>Contact</h1>
                 <p>Please get in touch using the form below:</p>
                 <form
-                    name='contact'
+                    name='Contact'
                     method='POST'
                     data-netlify='true'
                     netlify-honeypot='bot-field'
                     action='/thanks'
                 >
+                    <input type="hidden" name="form-name" value="Contact" />   
                     <p>
                         <label>Don’t fill this in: <input name='bot-field'/></label>
                     </p>
@@ -29,7 +30,7 @@ const ContactPage = () => {
                         <textarea name='message' type='text' placeholder='Message' required />
                     </p>
                     <p>
-                        <button>Send</button>
+                        <button type='submit'>Send</button>
                     </p>
                 </form>
             </PageContent>
