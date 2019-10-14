@@ -17,11 +17,21 @@ const ContactPage = () => {
                     data-netlify='true'
                     netlify-honeypot='bot-field'
                 >
-                    <input hidden name='bot-field'/>
-                    <input type='text' placeholder='Full Name' name='name' required/>
-                    <input type='email' name='email' placeholder='Email' required/>
-                    <textarea name='message' type='text' placeholder='Message' required/>
-                    <button type='submit'>Send</button>
+                    <p>
+                        <label>Don’t fill this in: <input name='bot-field'/></label>
+                    </p>
+                    <p>
+                        <input type='text' placeholder='Full Name' name='name' required />
+                    </p>
+                    <p>
+                        <input type='email' name='email' placeholder='Email' required />
+                    </p>
+                    <p>
+                        <textarea name='message' type='text' placeholder='Message' required />
+                    </p>
+                    <p>
+                        <button type='submit'>Send</button>
+                    </p>
                 </form>
             </PageContent>
         </>
