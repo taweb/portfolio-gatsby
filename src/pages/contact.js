@@ -1,10 +1,12 @@
 import React from 'react';
 import SEO from "../components/seo"
 import PageContent from '../components/pageContent'
+import { GlobalStyle } from '../theme/GlobalStyle';
 
 const ContactPage = () => {
     return (
         <>
+            <GlobalStyle />
             <SEO title="Contact" />
             <PageContent>
                 <h1>Contact</h1>

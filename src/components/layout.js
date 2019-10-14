@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import { GlobalStyle } from '../theme/GlobalStyle';
 import Header from './header/header';
 import Footer from './footer';
 import styled from 'styled-components';
@@ -49,14 +48,13 @@ const Layout = ({children}) => {
 
   return (
     <>
-        <GlobalStyle />
-          <Wrapper>
-            <HeaderLayout siteTitle={data.site.siteMetadata.title} />
-            <MainLayout>
-              {children}
-            </MainLayout>
-            <FooterLayout/>
-          </Wrapper>
+        <Wrapper>
+          <HeaderLayout siteTitle={data.site.siteMetadata.title} />
+          <MainLayout>
+            {children}
+          </MainLayout>
+          <FooterLayout/>
+        </Wrapper>
       </>
   )
 }
