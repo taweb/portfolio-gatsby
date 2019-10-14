@@ -3,11 +3,9 @@ import SEO from "../components/seo"
 import PageContent from '../components/pageContent'
 import { graphql } from 'gatsby';
 import ProjectList from '../components/projects/projectList';
-import { GlobalStyle } from '../theme/GlobalStyle';
 
 const ProjectsPage = ({data}) => (
     <>
-        <GlobalStyle />
         <SEO title="Projects" />
         <PageContent>
             <h1>Projects</h1>

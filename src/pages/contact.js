@@ -1,12 +1,10 @@
 import React from 'react';
 import SEO from "../components/seo"
 import PageContent from '../components/pageContent'
-import { GlobalStyle } from '../theme/GlobalStyle';
 
 const ContactPage = () => {
     return (
         <>
-            <GlobalStyle />
             <SEO title="Contact" />
             <PageContent>
                 <h1>Contact</h1>
@@ -16,6 +14,7 @@ const ContactPage = () => {
                     method='POST'
                     data-netlify='true'
                     netlify-honeypot='bot-field'
+                    action='/thanks'
                 >
                     <p>
                         <label>Don’t fill this in: <input name='bot-field'/></label>
@@ -30,7 +29,7 @@ const ContactPage = () => {
                         <textarea name='message' type='text' placeholder='Message' required />
                     </p>
                     <p>
-                        <button type='submit'>Send</button>
+                        <button>Send</button>
                     </p>
                 </form>
             </PageContent>

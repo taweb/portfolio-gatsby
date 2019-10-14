@@ -5,6 +5,7 @@ import Header from './header/header';
 import Footer from './footer';
 import styled from 'styled-components';
 import {breakPoints, layout} from '../theme/Variables';
+import { GlobalStyle } from '../theme/GlobalStyle';
 
 const HeaderLayout = styled(Header)`
   @media (${breakPoints.desktop}) {
@@ -48,6 +49,7 @@ const Layout = ({children}) => {
 
   return (
     <>
+        <GlobalStyle />
         <Wrapper>
           <HeaderLayout siteTitle={data.site.siteMetadata.title} />
           <MainLayout>
