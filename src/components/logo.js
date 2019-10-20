@@ -23,7 +23,7 @@ class Logo extends Component {
         return (
             <StyledLogo>
                 <CustomLink
-                    to="/"
+                    to='/'
                     type={'none'}
                     onClick={this.toggle}
                 >

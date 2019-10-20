@@ -17,7 +17,7 @@ const SocialLinks = ({className}) => {
                 type={'none'}
                 highlight={colors.red}
                 as='a'
-                href="https://github.com/taweb"
+                href='https://github.com/taweb'
             >
                 GitHub
             </CustomLink>
@@ -25,7 +25,7 @@ const SocialLinks = ({className}) => {
                 type={'none'}
                 highlight={colors.red}
                 as='a'
-                href="https://www.linkedin.com/in/tim-atherton-7726bb5a/"
+                href='https://www.linkedin.com/in/tim-atherton-7726bb5a/'
             >
                 LinkedIn
             </CustomLink>
@@ -33,7 +33,7 @@ const SocialLinks = ({className}) => {
                 type={'none'}
                 highlight={colors.red}
                 as='a'
-                href="https://www.instagram.com/th_atherton/"
+                href='https://www.instagram.com/th_atherton/'
             >
                 Instagram
             </CustomLink>

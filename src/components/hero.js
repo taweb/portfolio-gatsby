@@ -73,7 +73,7 @@ const StyledCustomLink = styled(CustomLink)`
 const Hero = () => {
     const data = useStaticQuery(graphql`
     query coverImgQuery {
-        cover: file(relativePath: { eq: "cover.JPG" }) {
+        cover: file(relativePath: { eq: 'cover.JPG' }) {
             childImageSharp {
                 fluid {
                     ...GatsbyImageSharpFluid

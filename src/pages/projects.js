@@ -1,12 +1,12 @@
 import React from 'react'
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 import PageContent from '../components/pageContent'
 import { graphql } from 'gatsby';
 import ProjectList from '../components/projects/projectList';
 
 const ProjectsPage = ({data}) => (
     <>
-        <SEO title="Projects" />
+        <SEO title='Projects' />
         <PageContent>
             <h1>Projects</h1>
             <h2>Personal Projects</h2>
