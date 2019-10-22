@@ -22,7 +22,7 @@ const Line = styled.div`
     height: 2px;
     transform: ${(props) => props.isOpen ? `rotate(135deg)` : `rotate(0deg)`};
     transition: transform 0.5s ease;
-    background-color: ${colors.black};
+    background-color: ${colors.white};
     ${Wrapper}:hover & {
         transform: ${(props) => props.isOpen && `rotate(225deg)`};
     }
@@ -30,14 +30,14 @@ const Line = styled.div`
     :after {
         content: '';
         position: absolute;
-        top: ${(props) => props.isOpen ? `0` : `-20px`};
+        top: ${(props) => props.isOpen ? `0` : `-10px`};
         width: 100%;
         height: 2px;
         background-color: inherit;
         transform: ${(props) => props.isOpen ? `rotate(90deg)` : `rotate(0deg)`}
     }
     :after {
-        top: ${(props) => props.isOpen ? `0` : `20px`};
+        top: ${(props) => props.isOpen ? `0` : `10px`};
     }
 `
 

@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import CustomLink from './link';
-import {colors, fontSizes} from '../theme/Variables';
+import {colors, fontSizes, breakPoints} from '../theme/Variables';
 
 const HeroWrapper = styled.div`
     position: relative;
@@ -12,20 +12,6 @@ const HeroWrapper = styled.div`
 `
 
 const StyledImg = styled(Img)`
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
-    position: absolute;
-    top: 0;
-    left: 0;
-`
-
-const Overlay = styled.div`
-    background: linear-gradient(
-        90deg, rgba(2,0,36,0.5) 0%, 
-        rgba(9,9,121,0.5) 35%, 
-        rgba(0,212,255,0.5) 100%
-    );
     width: 100%;
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
@@ -58,8 +44,8 @@ const StyledSpan = styled.span`
 const PrimaryText = styled(StyledSpan)`
     font-size: ${fontSizes.xlarge};
     margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
+    /* text-transform: uppercase; */
+    letter-spacing: 3px;
 `
 
 const SecondaryText = styled(StyledSpan)`
@@ -73,9 +59,9 @@ const StyledCustomLink = styled(CustomLink)`
 const Hero = () => {
     const data = useStaticQuery(graphql`
     query coverImgQuery {
-        cover: file(relativePath: { eq: 'cover.JPG' }) {
+        cover: file(relativePath: { eq: "cover.JPG" }) {
             childImageSharp {
-                fluid {
+                fluid(duotone: { highlight: "#7b8897", shadow: "#0f4975"}) {
                     ...GatsbyImageSharpFluid
                 }
             }
@@ -85,7 +71,6 @@ const Hero = () => {
     return (
         <HeroWrapper>
             <StyledImg fluid={data.cover.childImageSharp.fluid} alt='Cover Image'/>
-            <Overlay/>
             <HeaderContainer>
                 <HeaderText>
                     <PrimaryText>Tim Atherton</PrimaryText>

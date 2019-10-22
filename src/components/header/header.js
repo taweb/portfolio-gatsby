@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import {colors, breakPoints, layout, fontSizes} from '../../theme/Variables';
 import Hamburger from './hamburger';
 import Logo from '../logo';
-import CustomLink from '../link';
 import SocialLinks from '../socialLinks';
+import ModelMenu from './model';
+import CustomLink from '../link';
 
 const HeaderWrapper = styled.header`
-  /* padding: 10px 15px; */
   padding: 1rem;
   position: fixed;
   top: 0;
@@ -18,31 +18,12 @@ const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${colors.grey};
+  background-color: ${colors.primaryBlue};
   transition: background-color 0.5s ease;
   @media (${breakPoints.desktop}) {
       flex-direction: column;
       padding: 1rem;
       text-align: center;
-  }
-`
-
-const ModelMenu = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  z-index: 100;
-  background-color: ${colors.black};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  transform: ${(props) => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
-  transition: transform 0.3s ease;
-  @media (${breakPoints.desktop}) {
-    display: none;
   }
 `
   
@@ -58,17 +39,22 @@ const HeaderNavigation = styled.nav`
   }
 `
 
-const StyledSocialLinks = styled(SocialLinks)`
+const HeaderSocialLinks = styled(SocialLinks)`
   display: none;
   @media (${breakPoints.desktop}) {
+      width: 100%;
       display: flex;
+      justify-content: space-between;
   }
 `
 
-const activeStyle = {
-  'fontWeight': 'bold',
-  'textTransform': 'uppercase'
-}
+const HeaderLink = styled(CustomLink)`
+  background: none;
+  transition: color .3s;
+  &:hover {
+    color: ${colors.red}
+  }
+`
 
 class Header extends Component {
   constructor(props) {
@@ -99,100 +85,47 @@ class Header extends Component {
           <HeaderNavigation>
             <ul>
               <ListItem>
-                <CustomLink 
+                <HeaderLink 
                   to="/skills"
-                  activeStyle={activeStyle}
-                  type={'normal'}
-                  highlight={colors.red}
+                  type={'none'}
+                  color={colors.white}
                 >
                   Skills &amp; Experience
-                </CustomLink>
+                </HeaderLink>
               </ListItem>
               <ListItem>
-                <CustomLink 
+                <HeaderLink 
                   to="/projects"
-                  activeStyle={activeStyle}
-                  type={'normal'}
-                  highlight={colors.red}
+                  type={'none'}
+                  color={colors.white}
                 >
                   Projects
-                </CustomLink>
+                </HeaderLink>
               </ListItem> 
               <ListItem>
-                <CustomLink
+                <HeaderLink
                   to="/about"
-                  activeStyle={activeStyle}
-                  type={'normal'}
-                  highlight={colors.red}
+                  type={'none'}
+                  color={colors.white}
                 >
                   About
-                </CustomLink>
+                </HeaderLink>
               </ListItem>
               <ListItem>
-                <CustomLink
+                <HeaderLink
                   to="/contact"
-                  activeStyle={activeStyle}
-                  type={'normal'}
-                  highlight={colors.red}
+                  type={'none'}
+                  color={colors.white}
                 >
                   Contact
-                </CustomLink>
+                </HeaderLink>
               </ListItem>           
             </ul>
           </HeaderNavigation>
-          <StyledSocialLinks />
+          <HeaderSocialLinks />
           <Hamburger isOpen={isOpen} onClickHandler={this.toggle}/>
         </HeaderWrapper>
-        <ModelMenu isOpen={isOpen}>
-          <nav>
-            <ul>
-              <ListItem>
-                <CustomLink 
-                  to="/skills"
-                  color={colors.white}
-                  activeStyle={activeStyle}
-                  type={'none'}
-                  onClick={this.toggle}
-                >
-                  Skills
-                </CustomLink>
-              </ListItem>
-              <ListItem>
-                <CustomLink 
-                  to="/projects"
-                  color={colors.white}
-                  activeStyle={activeStyle}
-                  type={'none'}
-                  onClick={this.toggle}
-                >
-                  Projects
-                </CustomLink>
-              </ListItem> 
-              <ListItem>
-                <CustomLink
-                  to="/about"
-                  color={colors.white}
-                  activeStyle={activeStyle}
-                  type={'none'}
-                  onClick={this.toggle}
-                >
-                  About
-                </CustomLink>
-              </ListItem>
-              <ListItem>
-                <CustomLink
-                  to="/contact"
-                  color={colors.white}
-                  activeStyle={activeStyle}
-                  type={'none'}
-                  onClick={this.toggle}
-                >
-                  Contact
-                </CustomLink>
-              </ListItem>           
-            </ul>
-          </nav>
-        </ModelMenu>
+        <ModelMenu isOpen={isOpen} onClickHandler={this.toggle}/>
       </>
     )
   }

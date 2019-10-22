@@ -1,21 +1,30 @@
+const rawColors = {
+    shuttleGrey: '#576270',
+    slateGrey: '#aebed1'
+}
+
 const colors = {
     white: '#f7f7f7',
     black: '#222',
-    grey: '#c4c4c4',
-    red: '#ef5350'
+    // grey: '#c4c4c4',
+    grey: '#aebed1',
+    red: '#fd6b6a',
+    primaryBlue: `${rawColors.shuttleGrey}`,
+    secondaryBlue: `${rawColors.slateGrey}`
 }
 
 const breakPoints = {
     xldesktop: 'min-width: 1024px',
     desktop: 'min-width: 768px',
-    tablet: 'min-width: 660px'
+    tablet: 'min-width: 660px',
+    mobile: 'min-width: 440px'
 }
 
 const fontSizes = {
     xlarge: '3rem',
     large: '2.5rem',
-    medium: '1.5rem',
-    normal: '1.3rem'
+    medium: '1.6rem',
+    normal: '1.4rem'
 }
 
 const linkColors = {
@@ -24,7 +33,7 @@ const linkColors = {
 }
 
 const layout = {
-    sidebarWidth: '225px',
+    sidebarWidth: '230px',
     headerHeight: '60px'
 }
 

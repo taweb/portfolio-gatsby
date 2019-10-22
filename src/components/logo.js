@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import CustomLink from './link';
 import styled from 'styled-components';
-import { fontSizes } from '../theme/Variables';
+import { fontSizes, colors } from '../theme/Variables';
 
 const StyledLogo = styled.div`
     a {
         font-size: ${fontSizes.large};
+        color: ${colors.secondaryBlue};
     }
 `
 

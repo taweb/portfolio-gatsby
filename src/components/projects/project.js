@@ -1,8 +1,9 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { colors, fontSizes, linkColors, breakPoints } from '../../theme/Variables.js';
+import { colors, fontSizes, linkColors } from '../../theme/Variables.js';
 import CustomLink from '../link';
+import Button from '../button';
 
 const capitalize = (s) => {
     if (typeof s !== 'string') return ''
@@ -30,27 +31,26 @@ const ProjectCaption = styled.figcaption`
     font-size: ${fontSizes.medium};
 `
 
-const ButtonContainer = styled.a`
-    width: 100%;
-    padding: 1.5rem 0;
-    text-decoration: none;
-    text-align: center;
-    font-size: ${fontSizes.normal};
-    background: ${colors.black};
-    color: ${colors.white};
-    cursor: pointer;
-    @media (${breakPoints.desktop}) {
-        transition: none;
-    }
-    :hover {
-        opacity: 0.8;
-    }
-    :focus {
-        outline: 2px solid white;
-        outline-offset: -5px;
-    }
-`
-
+// const ButtonContainer = styled.a`
+//     width: 100%;
+//     padding: 1.5rem 0;
+//     text-decoration: none;
+//     text-align: center;
+//     font-size: ${fontSizes.normal};
+//     background: ${colors.black};
+//     color: ${colors.white};
+//     cursor: pointer;
+//     @media (${breakPoints.desktop}) {
+//         transition: none;
+//     }
+//     :hover {
+//         opacity: 0.8;
+//     }
+//     :focus {
+//         outline: 2px solid white;
+//         outline-offset: -5px;
+//     }
+// `
 
 const Project = ({children, project, image}) => {
     const imageSizes = image.node.childImageSharp.sizes
@@ -70,9 +70,9 @@ const Project = ({children, project, image}) => {
                     const linkType = link.name;
                     const linkColor = linkColors[linkType] || "";                       
                     return (
-                        <ButtonContainer href={`${link.url}`} key={i} style={{background: `${linkColor}`}}>
+                        <Button href={`${link.url}`} key={i} style={{background: `${linkColor}`}}>
                             {capitalize(link.name)}
-                        </ButtonContainer>
+                        </Button>
                     )
                 })}
             </LinkContainer>

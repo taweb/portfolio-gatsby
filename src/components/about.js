@@ -27,7 +27,7 @@ const Container = styled.div`
 const About = () => {
     const data = useStaticQuery(graphql`
     query portraitImgQuery {
-        cover: file(relativePath: { eq: 'portrait.JPG' }) {
+        cover: file(relativePath: { eq: "portrait.JPG" }) {
             childImageSharp {
                 fixed(width: 250, height: 250) {
                     ...GatsbyImageSharpFixed

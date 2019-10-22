@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: inherit;
+        font-family: inherit;
         font-weight: inherit;
     }
 
@@ -48,6 +49,10 @@ export const GlobalStyle = createGlobalStyle`
     p {
         font-size: ${fontSizes.normal};
         margin-bottom: 1rem;
+    }
+
+    input, textarea {
+        font-size: ${fontSizes.normal};
     }
 
     ul, ol {
