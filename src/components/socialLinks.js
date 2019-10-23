@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import CustomLink from './link';
-import {fontSizes, colors} from '../theme/Variables';
+import {fontSizes} from '../theme/Variables';
 
 
 const LinkContainer = styled.div`
     font-size: ${fontSizes.normal};
 `
 
-const SocialLinks = ({className}) => {
+const SocialLinks = ({className, color}) => {
     return ( 
         <LinkContainer className={className}>
             <CustomLink
                 type={'none'}
                 as='a'
                 href='https://github.com/taweb'
-                color={colors.white}
+                color={color}
             >
                 GitHub
             </CustomLink>
@@ -23,7 +23,7 @@ const SocialLinks = ({className}) => {
                 type={'none'}
                 as='a'
                 href='https://www.linkedin.com/in/tim-atherton-7726bb5a/'
-                color={colors.white}
+                color={color}
             >
                 LinkedIn
             </CustomLink>
@@ -31,7 +31,7 @@ const SocialLinks = ({className}) => {
                 type={'none'}
                 as='a'
                 href='https://www.instagram.com/th_atherton/'
-                color={colors.white}
+                color={color}
             >
                 Instagram
             </CustomLink>

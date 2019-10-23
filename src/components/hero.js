@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import CustomLink from './link';
-import {colors, fontSizes, breakPoints} from '../theme/Variables';
+import {colors, fontSizes, breakPoints, layout} from '../theme/Variables';
 
 const HeroWrapper = styled.div`
     position: relative;
@@ -29,6 +29,10 @@ const HeaderContainer = styled.div`
     text-align: center;
     padding: 0 20px;
     font-size: ${fontSizes.medium};
+    @media (${breakPoints.desktop}) {
+        left: calc(50% + (${layout.sidebarWidth})/2);
+        width: calc(100% - ${layout.sidebarWidth});
+    }
 `
 
 const HeaderText = styled.h1`

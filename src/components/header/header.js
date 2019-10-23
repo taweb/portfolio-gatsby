@@ -19,7 +19,6 @@ const HeaderWrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   background-color: ${colors.primaryBlue};
-  transition: background-color 0.5s ease;
   @media (${breakPoints.desktop}) {
       flex-direction: column;
       padding: 1rem;
@@ -71,8 +70,9 @@ class Header extends Component {
   }
 
   render() {
-    const {siteTitle, className} = this.props
+    const {siteTitle, className, path} = this.props
     const isOpen = this.state.checked
+    const linkColor = path === '/' ? colors.black : colors.white    
 
     return (
       <>
@@ -122,10 +122,10 @@ class Header extends Component {
               </ListItem>           
             </ul>
           </HeaderNavigation>
-          <HeaderSocialLinks />
+          <HeaderSocialLinks color={linkColor} />
           <Hamburger isOpen={isOpen} onClickHandler={this.toggle}/>
         </HeaderWrapper>
-        <ModelMenu isOpen={isOpen} onClickHandler={this.toggle}/>
+        <ModelMenu isOpen={isOpen} onClickHandler={this.toggle} color={colors.white}/>
       </>
     )
   }

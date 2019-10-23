@@ -45,7 +45,7 @@ const ModalSocialLinks = styled(SocialLinks)`
   }
 `
 
-const ModelMenu = ({isOpen, onClickHandler}) => {
+const ModelMenu = ({isOpen, onClickHandler, color}) => {
     return (
         <ModelMenuWrapper isOpen={isOpen}>
           <nav>
@@ -92,7 +92,7 @@ const ModelMenu = ({isOpen, onClickHandler}) => {
               </ListItem>           
             </ul>
           </nav>
-          <ModalSocialLinks/>
+          <ModalSocialLinks color={color}/>
         </ModelMenuWrapper>
     );
 }

@@ -11,6 +11,7 @@ const HeaderLayout = styled(Header)`
   @media (${breakPoints.desktop}) {
       width: ${layout.sidebarWidth};
       height: 100%;
+      background: ${(props) => props.path === '/' && 'none'};
   }
 `
 
@@ -20,7 +21,7 @@ const MainLayout = styled.main`
   flex: 1;
   @media (${breakPoints.desktop}) {
       margin-top: 0px;
-      margin-left: ${layout.sidebarWidth};
+      margin-left: ${(props) => props.path === '/' ? `0px` : `${layout.sidebarWidth}`};
   }
 `
 
@@ -36,7 +37,8 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `
 
-const Layout = ({children}) => {
+const Layout = ({children, location}) => {
+  
   const data = useStaticQuery(graphql`
     query titleQuery {
       site {
@@ -51,8 +53,11 @@ const Layout = ({children}) => {
     <>
         <GlobalStyle />
         <Wrapper>
-          <HeaderLayout siteTitle={data.site.siteMetadata.title} />
-          <MainLayout>
+          <HeaderLayout 
+            siteTitle={data.site.siteMetadata.title}
+            path={location.pathname}
+          />
+          <MainLayout path={location.pathname}>
             {children}
           </MainLayout>
           <FooterLayout/>
