@@ -1,11 +1,16 @@
 import React from 'react'
 import SEO from '../components/seo'
+import PageContent from '../components/pageContent';
+import CustomLink from '../components/link';
 
 const NotFoundPage = () => (
   <>
     <SEO title='404: Not found' />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <PageContent>
+      <h1>404</h1>
+      <h2>Page not Found</h2>
+      <p>Sorry, it looks like this page could not be found. Please check the URL or <CustomLink to="/">return to Home</CustomLink> to start again.</p>
+    </PageContent>
   </>
 )
 

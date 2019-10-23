@@ -42,7 +42,7 @@ const About = () => {
             <Container>
                 <StyledImg fixed={data.cover.childImageSharp.fixed} alt='Portrait of Me'/>
                 <Summary>Hello, I'm Tim Atherton, a Junior Web Developer based in Bristol, UK. I have over 1 year of front-end web development experience, largely using React.</Summary>
-                <p>I'm currently working for FlexiDB, a web technologies consultancy with a focus on creating scalable and real-time application solutions for clients. The company also develops products in-house, such as the Mind Doodle mind mapping and project management tool.</p>
+                <p>I'm currently working for FlexiDB, a web technologies consultancy with a focus on creating scalable and real-time application solutions for clients. The company also develops products in-house, such as the <a href='https://www.minddoodle.com/'>Mind Doodle</a> mind mapping and project management tool.</p>
                 <p>In my spare time I am a keen rower and enjoy competing with the team at various local and national events throughout the year. I love travelling to interesting corners of the world (I already have Japan in mind for the next big trip!) and also have an obsession with Glastonbury Festival having attended the last 6 years in a row.</p>
             </Container>
         </>

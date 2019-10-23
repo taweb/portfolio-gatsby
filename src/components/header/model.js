@@ -12,6 +12,7 @@ const ModelMenuWrapper = styled.div`
   width: 100%;
   z-index: 100;
   background-color: ${colors.black};
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +38,7 @@ const HeaderLink = styled(CustomLink)`
 
 const ModalSocialLinks = styled(SocialLinks)`
   position: fixed;
-  bottom: 10px;
+  bottom: 50px;
   display: flex;
   > a {
     margin: 10px;

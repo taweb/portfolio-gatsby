@@ -44,7 +44,6 @@ const StyledSpan = styled.span`
 const PrimaryText = styled(StyledSpan)`
     font-size: ${fontSizes.xlarge};
     margin-bottom: 10px;
-    /* text-transform: uppercase; */
     letter-spacing: 3px;
 `
 
@@ -54,6 +53,14 @@ const SecondaryText = styled(StyledSpan)`
 
 const StyledCustomLink = styled(CustomLink)`
     margin: 0px 10px;
+`
+
+const QuickLinkContainer = styled.p`
+    display: block;
+    font-size: ${fontSizes.medium};
+    @media (${breakPoints.mobile}) {
+        display: inline;
+    }
 `
 
 const Hero = () => {
@@ -76,8 +83,12 @@ const Hero = () => {
                     <PrimaryText>Tim Atherton</PrimaryText>
                     <SecondaryText>Web Developer</SecondaryText>
                 </HeaderText>
-                <StyledCustomLink to='/skills' type={'normal'} color={colors.white} highlight={colors.red}>Skills & Experience</StyledCustomLink>
-                <StyledCustomLink to='/contact' type={'normal'} color={colors.white} highlight={colors.red}>Get in Touch</StyledCustomLink>
+                <QuickLinkContainer>
+                    <StyledCustomLink to='/skills' type={'normal'} color={colors.white} highlight={colors.red}>Skills & Experience</StyledCustomLink>
+                </QuickLinkContainer>
+                <QuickLinkContainer>
+                    <StyledCustomLink to='/contact' type={'normal'} color={colors.white} highlight={colors.red}>Get in Touch</StyledCustomLink>
+                </QuickLinkContainer>
             </HeaderContainer>
         </HeroWrapper>
     )

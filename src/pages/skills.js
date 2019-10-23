@@ -8,7 +8,7 @@ const SkillsPage = ({data}) => {
     const workData = data.allMarkdownRemark.nodes[0]
     return (
         <>
-            <SEO title='Skills and Experience' />
+            <SEO title='Skills and Experience'/>
             <PageContent>
                 <h1>Skills &amp; Experience</h1>
                 <Work data={workData}/>

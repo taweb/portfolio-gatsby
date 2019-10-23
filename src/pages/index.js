@@ -5,8 +5,8 @@ import Hero from '../components/hero'
 const IndexPage = () => {
   return (
     <>
-      <Hero/>
       <SEO title='Home' keywords={[`Tim Atherton`, `Portfolio`, `Web Developer`]} />
+      <Hero/>
     </>
   )
 }

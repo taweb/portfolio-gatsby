@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Tim Atherton`,
-    description: `Portfolio Site using Gatsbyjs`,
+    description: `Tim Atherton Portfolio Site`,
     author: `Tim Atherton`,
   },
   plugins: [
@@ -26,12 +26,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Tim Atherton Portfolio`,
+        short_name: `Tim Atherton`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#0f4975`,
+        theme_color: `#0f4975`,
         display: `minimal-ui`,
+        icon: `src/images/favicon.png`
       },
     },
     `gatsby-plugin-styled-components`,
