@@ -8,16 +8,21 @@ import {colors, fontSizes, breakPoints, layout} from '../theme/Variables';
 const HeroWrapper = styled.div`
     position: relative;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
+    @media (${breakPoints.desktop}) {
+        height: 90vh;
+    }
 `
 
 const StyledImg = styled(Img)`
     width: 100%;
     height: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     position: absolute;
     top: 0;
     left: 0;
+    @media (${breakPoints.desktop}) {
+        clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    }
 `
 
 const HeaderContainer = styled.div`

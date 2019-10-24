@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Header from './header/header';
 import Footer from './footer';
 import styled from 'styled-components';
-import {breakPoints, layout} from '../theme/Variables';
+import {breakPoints, layout, colors} from '../theme/Variables';
 import { GlobalStyle } from '../theme/GlobalStyle';
 
 const HeaderLayout = styled(Header)`
@@ -16,7 +16,7 @@ const HeaderLayout = styled(Header)`
 `
 
 const MainLayout = styled.main`
-  margin-top: ${layout.headerHeight};
+  margin-top: ${(props) => props.path === '/' ? `0px` : `${layout.headerHeight}`};
   height: 100%;
   flex: 1;
   @media (${breakPoints.desktop}) {
@@ -26,8 +26,15 @@ const MainLayout = styled.main`
 `
 
 const FooterLayout = styled(Footer)`
+  position: ${(props) => props.path === '/' && 'fixed'};
+  bottom: ${(props) => props.path === '/' && '0px'};
+  width: 100%;
+  color: ${(props) => props.path === '/' && `${colors.white}`};
   @media (${breakPoints.desktop}) {
     margin-left: ${layout.sidebarWidth};
+    position: static;
+    width: auto;
+    color: ${colors.black};
   }
 `
 
@@ -60,7 +67,7 @@ const Layout = ({children, location}) => {
           <MainLayout path={location.pathname}>
             {children}
           </MainLayout>
-          <FooterLayout/>
+          <FooterLayout path={location.pathname}/>
         </Wrapper>
       </>
   )
