@@ -3,37 +3,52 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import CustomLink from './link';
+import socialLinks from './socialLinks';
 import {colors, fontSizes, breakPoints, layout} from '../theme/Variables';
+import SocialLinks from './socialLinks';
 
 const HeroWrapper = styled.div`
     position: relative;
     width: 100%;
     height: 100vh;
+    background: ${colors.white};
     @media (${breakPoints.desktop}) {
         height: 90vh;
+        background: none;
     }
 `
 
 const StyledImg = styled(Img)`
     width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    /* min-height: 300px;
+    max-height: calc(100vh - ${layout.footerHeight}); */
+    height: 100%;   
     @media (${breakPoints.desktop}) {
         clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+        height: 100%;
     }
 `
 
 const HeaderContainer = styled.div`
     position: absolute;
-    top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    top: calc(${layout.headerHeight} + 40px);
+    transform: translate(-50%, 0%);
     width: 100%;
     text-align: center;
-    padding: 0 20px;
+    padding: 0px 20px;
     font-size: ${fontSizes.medium};
+    @media (${breakPoints.mobile}) {
+        top: calc(${layout.headerHeight} + 70px);
+    }
+    @media (${breakPoints.tablet}) {
+        top: 40%;
+        transform: translate(-50%, -50%);
+        padding: 0px 20px;
+    }
     @media (${breakPoints.desktop}) {
         left: calc(50% + (${layout.sidebarWidth})/2);
         width: calc(100% - ${layout.sidebarWidth});
@@ -72,12 +87,18 @@ const QuickLinkContainer = styled.p`
     }
 `
 
+const StyledSocialLinks = styled(SocialLinks)`
+    width: 100%;
+    display: flex;
+    align-items: space-between;
+`
+
 const Hero = () => {
     const data = useStaticQuery(graphql`
     query coverImgQuery {
         cover: file(relativePath: { eq: "cover.JPG" }) {
             childImageSharp {
-                fluid(duotone: { highlight: "#7b8897", shadow: "#0f4975"}) {
+                fluid(maxWidth: 1500, duotone: { highlight: "#7b8897", shadow: "#0f4975"}) {
                     ...GatsbyImageSharpFluid
                 }
             }
