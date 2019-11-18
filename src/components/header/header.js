@@ -9,7 +9,7 @@ import ModelMenu from './model';
 import CustomLink from '../link';
 
 const HeaderWrapper = styled.header`
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   position: fixed;
   top: 0;
   height: ${layout.headerHeight};
@@ -21,7 +21,7 @@ const HeaderWrapper = styled.header`
   background-color: ${colors.primaryBlue};
   @media (${breakPoints.desktop}) {
       flex-direction: column;
-      padding: 1rem;
+      padding: 2rem 1.5rem;
       text-align: center;
   }
 `

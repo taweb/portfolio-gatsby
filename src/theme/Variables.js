@@ -6,7 +6,6 @@ const rawColors = {
 const colors = {
     white: '#f7f7f7',
     black: '#222',
-    // grey: '#c4c4c4',
     grey: '#aebed1',
     red: '#fd6b6a',
     primaryBlue: `${rawColors.shuttleGrey}`,
@@ -33,7 +32,7 @@ const linkColors = {
 }
 
 const layout = {
-    sidebarWidth: '230px',
+    sidebarWidth: '240px',
     headerHeight: '60px'
 }
 

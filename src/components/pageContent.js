@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import {breakPoints} from '../theme/Variables';
 
 const PageContentWrapper = styled.div`
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     @media(${breakPoints.desktop}) {
-        padding: 1rem 3rem;
+        padding: 2rem 3rem;
     }
     @media(${breakPoints.xldesktop}) {
-        padding: 1rem 10rem;
+        padding: 2rem 10rem;
     }
 `
 
