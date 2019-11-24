@@ -58,7 +58,7 @@ const HeaderContainer = styled.div`
 const HeaderText = styled.h1`
     color: ${colors.white};
     text-shadow: 1px 1px 2px ${colors.black};
-    margin-bottom: 10px;
+    margin-bottom: 2rem;
 `
 
 const StyledSpan = styled.span`
@@ -111,7 +111,7 @@ const Hero = () => {
             <HeaderContainer>
                 <HeaderText>
                     <PrimaryText>Tim Atherton</PrimaryText>
-                    <SecondaryText>Web Developer</SecondaryText>
+                    <SecondaryText>I'm a Web Developer in Bristol, UK</SecondaryText>
                 </HeaderText>
                 <QuickLinkContainer>
                     <StyledCustomLink to='/skills' type={'normal'} color={colors.white} highlight={colors.red}>Skills & Experience</StyledCustomLink>

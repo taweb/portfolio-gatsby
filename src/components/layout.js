@@ -5,31 +5,32 @@ import Header from './header/header';
 import Footer from './footer';
 import styled from 'styled-components';
 import {breakPoints, layout, colors} from '../theme/Variables';
+import { isHomepage } from '../utilities';
 import { GlobalStyle } from '../theme/GlobalStyle';
 
 const HeaderLayout = styled(Header)`
   @media (${breakPoints.desktop}) {
       width: ${layout.sidebarWidth};
       height: 100%;
-      background: ${(props) => props.path === '/' && 'none'};
+      background: ${(props) => isHomepage(props.path) && 'none'};
   }
 `
 
 const MainLayout = styled.main`
-  margin-top: ${(props) => props.path === '/' ? `0px` : `${layout.headerHeight}`};
+  margin-top: ${(props) => isHomepage(props.path) ? `0px` : `${layout.headerHeight}`};
   height: 100%;
   flex: 1;
   @media (${breakPoints.desktop}) {
       margin-top: 0px;
-      margin-left: ${(props) => props.path === '/' ? `0px` : `${layout.sidebarWidth}`};
+      margin-left: ${(props) => isHomepage(props.path) ? `0px` : `${layout.sidebarWidth}`};
   }
 `
 
 const FooterLayout = styled(Footer)`
-  position: ${(props) => props.path === '/' && 'fixed'};
-  bottom: ${(props) => props.path === '/' && '0px'};
+  position: ${(props) => isHomepage(props.path) && 'fixed'};
+  bottom: ${(props) => isHomepage(props.path) && '0px'};
   width: 100%;
-  color: ${(props) => props.path === '/' && `${colors.white}`};
+  color: ${(props) => isHomepage(props.path) && `${colors.white}`};
   @media (${breakPoints.desktop}) {
     margin-left: ${layout.sidebarWidth};
     position: static;
