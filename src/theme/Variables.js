@@ -20,10 +20,10 @@ const breakPoints = {
 }
 
 const fontSizes = {
-    xlarge: '3rem',
-    large: '2.5rem',
-    medium: '1.6rem',
-    normal: '1.4rem'
+    xlarge: '3.2rem',
+    large: '2.4rem',
+    medium: '1.8rem',
+    normal: '1.6rem'
 }
 
 const linkColors = {

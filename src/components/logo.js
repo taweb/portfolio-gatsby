@@ -7,6 +7,7 @@ const StyledLogo = styled.div`
     a {
         font-size: ${fontSizes.large};
         color: ${colors.secondaryBlue};
+        font-weight: bold;
     }
 `
 

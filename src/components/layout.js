@@ -18,7 +18,6 @@ const HeaderLayout = styled(Header)`
 
 const MainLayout = styled.main`
   margin-top: ${(props) => isHomepage(props.path) ? `0px` : `${layout.headerHeight}`};
-  height: 100%;
   flex: 1;
   @media (${breakPoints.desktop}) {
       margin-top: 0px;

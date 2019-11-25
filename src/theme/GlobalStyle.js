@@ -8,8 +8,6 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: inherit;
-        font-family: inherit;
-        font-weight: inherit;
     }
 
     html {
@@ -17,19 +15,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: 'Source Code Pro', monospace;
-        font-weight: 400;
         color: ${colors.black};
-        @font-face {
-            font-family: 'Source Code Pro', monospace;
-            src: url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
-        }
         height: 100%;
         box-sizing: border-box;
-    }
-
-    strong { 
-        font-weight: bold;
     }
 
     h1 {

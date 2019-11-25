@@ -3,9 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import CustomLink from './link';
-import socialLinks from './socialLinks';
 import {colors, fontSizes, breakPoints, layout} from '../theme/Variables';
-import SocialLinks from './socialLinks';
 
 const HeroWrapper = styled.div`
     position: relative;
@@ -13,7 +11,7 @@ const HeroWrapper = styled.div`
     height: 100vh;
     background: ${colors.white};
     @media (${breakPoints.desktop}) {
-        height: 90vh;
+        height: 85vh;
         background: none;
     }
 `
@@ -27,7 +25,7 @@ const StyledImg = styled(Img)`
     max-height: calc(100vh - ${layout.footerHeight}); */
     height: 100%;   
     @media (${breakPoints.desktop}) {
-        clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
         height: 100%;
     }
 `
@@ -85,12 +83,6 @@ const QuickLinkContainer = styled.p`
     @media (${breakPoints.mobile}) {
         display: inline;
     }
-`
-
-const StyledSocialLinks = styled(SocialLinks)`
-    width: 100%;
-    display: flex;
-    align-items: space-between;
 `
 
 const Hero = () => {
