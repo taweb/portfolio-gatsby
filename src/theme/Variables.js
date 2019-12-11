@@ -20,6 +20,7 @@ const breakPoints = {
 }
 
 const fontSizes = {
+    title: '4.5rem',
     xlarge: '3.2rem',
     large: '2.4rem',
     medium: '1.8rem',
@@ -33,7 +34,8 @@ const linkColors = {
 
 const layout = {
     sidebarWidth: '240px',
-    headerHeight: '60px'
+    headerHeight: '60px',
+    footerHeight: '85px'
 }
 
 export { colors, breakPoints, layout, fontSizes, linkColors };

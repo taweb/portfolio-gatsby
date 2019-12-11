@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import {colors, breakPoints} from '../theme/Variables';
+import {colors, breakPoints, layout} from '../theme/Variables';
 import {isHomepage} from '../utilities'; 
 
 const StyledFooter = styled.footer`
     text-align: center;
     padding: 1em;
+    @media (${breakPoints.desktop}) {
+      height: ${layout.footerHeight};
+    }
 `
 
 const StyledAnchor = styled.a`
@@ -13,7 +16,7 @@ const StyledAnchor = styled.a`
     background-image: ${(props) => isHomepage(props.path) && `linear-gradient(${colors.white}, ${colors.white})`};
     @media (${breakPoints.desktop}) {
         color: ${(props) => isHomepage(props.path) && `${colors.black}`};
-        background-image: ${(props) => isHomepage(props.path) && `linear-gradient(${colors.black}, ${colors.black})`};
+        background-image: linear-gradient(${colors.black}, ${colors.black});
     }
 `
 

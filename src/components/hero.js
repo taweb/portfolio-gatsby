@@ -8,48 +8,36 @@ import {colors, fontSizes, breakPoints, layout} from '../theme/Variables';
 const HeroWrapper = styled.div`
     position: relative;
     width: 100%;
-    height: 100vh;
-    background: ${colors.white};
+    height: calc(100vh - ${layout.headerHeight});
     @media (${breakPoints.desktop}) {
-        height: 85vh;
-        background: none;
+        height: calc(100vh - ${layout.footerHeight});
     }
 `
 
 const StyledImg = styled(Img)`
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* min-height: 300px;
-    max-height: calc(100vh - ${layout.footerHeight}); */
     height: 100%;   
     @media (${breakPoints.desktop}) {
         clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-        height: 100%;
     }
 `
 
 const HeaderContainer = styled.div`
     position: absolute;
     left: 50%;
-    top: calc(${layout.headerHeight} + 40px);
+    top: 10%;
     transform: translate(-50%, 0%);
     width: 100%;
     text-align: center;
     padding: 0px 20px;
     font-size: ${fontSizes.medium};
-    @media (${breakPoints.mobile}) {
-        top: calc(${layout.headerHeight} + 70px);
-    }
     @media (${breakPoints.tablet}) {
-        top: 40%;
-        transform: translate(-50%, -50%);
-        padding: 0px 20px;
+        top: 20%;
     }
     @media (${breakPoints.desktop}) {
         left: calc(50% + (${layout.sidebarWidth})/2);
         width: calc(100% - ${layout.sidebarWidth});
+        top: 30%;
     }
 `
 
@@ -64,7 +52,7 @@ const StyledSpan = styled.span`
 `
 
 const PrimaryText = styled(StyledSpan)`
-    font-size: ${fontSizes.xlarge};
+    font-size: ${fontSizes.title};
     margin-bottom: 10px;
     letter-spacing: 3px;
 `

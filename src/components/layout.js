@@ -8,6 +8,12 @@ import {breakPoints, layout, colors} from '../theme/Variables';
 import { isHomepage } from '../utilities';
 import { GlobalStyle } from '../theme/GlobalStyle';
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
 const HeaderLayout = styled(Header)`
   @media (${breakPoints.desktop}) {
       width: ${layout.sidebarWidth};
@@ -17,7 +23,7 @@ const HeaderLayout = styled(Header)`
 `
 
 const MainLayout = styled.main`
-  margin-top: ${(props) => isHomepage(props.path) ? `0px` : `${layout.headerHeight}`};
+  margin-top: ${layout.headerHeight};
   flex: 1;
   @media (${breakPoints.desktop}) {
       margin-top: 0px;
@@ -36,12 +42,6 @@ const FooterLayout = styled(Footer)`
     width: auto;
     color: ${colors.black};
   }
-`
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 `
 
 const Layout = ({children, location}) => {
