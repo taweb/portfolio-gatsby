@@ -12,13 +12,9 @@ const capitalize = (s) => {
 
 const ProjectContainer = styled.figure`
     border: 2px solid ${colors.black};
-    max-width: 300px;
-    margin: 20px auto;
+    margin: 0;
     page-break-inside: avoid;
     break-inside: avoid;
-    :first-child {
-        margin-top: 0;
-    }
 `
 
 const LinkContainer = styled.div`
@@ -31,11 +27,11 @@ const ProjectCaption = styled.figcaption`
     font-size: ${fontSizes.medium};
 `
 
-const Project = ({children, project, image}) => {
+const Project = ({children, project, image, className}) => {
     const imageSizes = image.node.childImageSharp.sizes
     const repoUrl = project.links.find(link => link.name || null === 'repo').url || null
     return (
-        <ProjectContainer>
+        <ProjectContainer className={className}>
             <CustomLink as='a' type={'none'} href={repoUrl}>
                 <Img
                     title={project.name}

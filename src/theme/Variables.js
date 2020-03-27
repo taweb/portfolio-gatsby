@@ -24,6 +24,7 @@ const colors = {
 const contentWidth = '1070px';
 
 const breakPoints = {
+    ultrawide: 'min-width: 1150px',
     xldesktop: 'min-width: 1024px',
     desktop: 'min-width: 768px',
     tablet: 'min-width: 660px',
