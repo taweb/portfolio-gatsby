@@ -3,7 +3,7 @@ import SEO from '../components/seo'
 import PageContent from '../components/pageContent'
 import About from '../components/about'
 
-const AboutPage = () => {
+const AboutPage = () => {    
     return (
         <>  
             <SEO title='About' />

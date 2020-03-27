@@ -4,6 +4,7 @@ import PageContent from '../components/pageContent'
 import styled from 'styled-components';
 import { colors, breakPoints } from '../theme/Variables.js';
 import Button from '../components/button'
+import PageHeader from '../components/pageHeader'
 
 const Label = styled.label`
     display: block;
@@ -39,7 +40,7 @@ const ContactPage = () => {
         <>
             <SEO title='Contact' />
             <PageContent>
-                <h1>Contact</h1>
+                <PageHeader>Contact</PageHeader>
                 <p>Please get in touch using the form below. I look forward to hearing from you!</p>
                 <form
                     name='Contact'

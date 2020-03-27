@@ -10,6 +10,15 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     }
 
+    :root {
+        --currentColor: ${colors.red};
+
+        --skills: ${colors.red};
+        --projects: ${colors.yellow};
+        --about: ${colors.green};
+        --contact: ${colors.lightBlue};
+    }
+
     html {
         font-size: 62.5%;
     }
@@ -23,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
     h1 {
         font-size: ${fontSizes.xlarge};
         margin-bottom: 1.5rem;
+        position: relative;
     }
 
     h2 {
@@ -50,7 +60,7 @@ export const GlobalStyle = createGlobalStyle`
     a {
         color: ${colors.black};
         text-decoration: none;
-        background-image: linear-gradient(${colors.black}, ${colors.black}), linear-gradient(${colors.grey}, ${colors.grey});
+        background-image: linear-gradient(${colors.black}, ${colors.black}), linear-gradient(var(--currentColor), var(--currentColor));
         background-position: 0% 100%, 0% 100%;
         background-repeat: no-repeat, no-repeat;
         background-size: 100% 2px, 100% 0px;

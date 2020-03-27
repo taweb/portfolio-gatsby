@@ -94,10 +94,10 @@ const Hero = () => {
                     <SecondaryText>I'm a Web Developer in Bristol, UK</SecondaryText>
                 </HeaderText>
                 <QuickLinkContainer>
-                    <StyledCustomLink to='/skills' type={'normal'} color={colors.white} highlight={colors.red}>Skills & Experience</StyledCustomLink>
+                    <StyledCustomLink to='/skills' type={'normal'} color={colors.white} highlight={colors.redDarkened}>Skills & Experience</StyledCustomLink>
                 </QuickLinkContainer>
                 <QuickLinkContainer>
-                    <StyledCustomLink to='/contact' type={'normal'} color={colors.white} highlight={colors.red}>Get in Touch</StyledCustomLink>
+                    <StyledCustomLink to='/contact' type={'normal'} color={colors.white} highlight={colors.redDarkened}>Get in Touch</StyledCustomLink>
                 </QuickLinkContainer>
             </HeaderContainer>
         </HeroWrapper>

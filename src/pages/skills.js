@@ -3,6 +3,7 @@ import SEO from '../components/seo';
 import Skills from '../components/skills';
 import PageContent from '../components/pageContent';
 import Work from '../components/work';
+import PageHeader from '../components/pageHeader'
 
 const SkillsPage = ({data}) => {    
     const workData = data.allMarkdownRemark.nodes[0]
@@ -10,7 +11,7 @@ const SkillsPage = ({data}) => {
         <>
             <SEO title='Skills and Experience'/>
             <PageContent>
-                <h1>Skills &amp; Experience</h1>
+                <PageHeader>Skills &amp; Experience</PageHeader>
                 <Work data={workData}/>
                 <Skills />
             </PageContent>

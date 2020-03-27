@@ -1,16 +1,27 @@
 const rawColors = {
     shuttleGrey: '#576270',
-    slateGrey: '#aebed1'
+    slateGrey: '#aebed1',
+    onahau: '#C7DFFF',
+    yellow: '#FFE3AD',
+    reef: '#C2FFBA',
+    bitterSweet: '#FF9E9D',
+    darkRed: '#fd6b6a'
 }
 
 const colors = {
     white: '#f7f7f7',
     black: '#222',
-    grey: '#aebed1',
-    red: '#fd6b6a',
+    grey: `${rawColors.slateGrey}`,
+    red: `${rawColors.bitterSweet}`,
+    redDarkened: `${rawColors.darkRed}`,
     primaryBlue: `${rawColors.shuttleGrey}`,
-    secondaryBlue: `${rawColors.slateGrey}`
+    secondaryBlue: `${rawColors.slateGrey}`,
+    yellow: `${rawColors.yellow}`,
+    green: `${rawColors.reef}`,
+    lightBlue: `${rawColors.onahau}`
 }
+
+const contentWidth = '1070px';
 
 const breakPoints = {
     xldesktop: 'min-width: 1024px',
@@ -38,4 +49,4 @@ const layout = {
     footerHeight: '85px'
 }
 
-export { colors, breakPoints, layout, fontSizes, linkColors };
+export { colors, breakPoints, layout, fontSizes, linkColors, contentWidth };

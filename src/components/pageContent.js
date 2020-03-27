@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import {breakPoints} from '../theme/Variables';
+import {breakPoints, contentWidth} from '../theme/Variables';
 
 const PageContentWrapper = styled.div`
-    padding: 1rem 1.5rem;
+    padding: 2rem 1.5rem;
+    max-width: ${contentWidth};
+    margin: 0 auto;
     @media(${breakPoints.desktop}) {
-        padding: 2rem 3rem;
+        padding: 3rem 3rem;
     }
     @media(${breakPoints.xldesktop}) {
-        padding: 2rem 10rem;
+        padding: 3rem 10rem;
     }
 `
 

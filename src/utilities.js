@@ -2,4 +2,9 @@ const isHomepage = (string) => {
     return string === '/'
 }
 
-export { isHomepage };
+const getPage = (uri) => {
+    if (uri === '/') return '/';
+    return uri.substr(1);
+}
+
+export { isHomepage, getPage };

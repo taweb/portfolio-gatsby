@@ -1,13 +1,23 @@
 import React, {Component} from 'react';
 import CustomLink from './link';
 import styled from 'styled-components';
-import { fontSizes, colors } from '../theme/Variables';
+import { fontSizes, colors, breakPoints } from '../theme/Variables';
 
 const StyledLogo = styled.div`
-    a {
-        font-size: ${fontSizes.large};
-        color: ${colors.secondaryBlue};
-        font-weight: bold;
+    @media (${breakPoints.desktop}) {
+      width: 100%;
+    }
+`
+
+const StyledCustomLink = styled(CustomLink)`
+    padding-right: 30px;
+    font-size: ${fontSizes.large};
+    color: ${colors.secondaryBlue};
+    font-weight: bold;
+    display: inline-block;
+    width: 100%;
+    @media (${breakPoints.desktop}) {
+        padding-right: 0;
     }
 `
 
@@ -24,13 +34,13 @@ class Logo extends Component {
         const {siteTitle} = this.props
         return (
             <StyledLogo>
-                <CustomLink
+                <StyledCustomLink
                     to='/'
                     type={'none'}
                     onClick={this.toggle}
                 >
                     {siteTitle}
-                </CustomLink>
+                </StyledCustomLink>
             </StyledLogo>
         );
     }

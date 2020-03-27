@@ -38,6 +38,10 @@ const HeaderNavigation = styled.nav`
   }
 `
 
+const NavList = styled.ul`
+  margin: 0;
+`
+
 const HeaderSocialLinks = styled(SocialLinks)`
   display: none;
   @media (${breakPoints.desktop}) {
@@ -48,10 +52,12 @@ const HeaderSocialLinks = styled(SocialLinks)`
 `
 
 const HeaderLink = styled(CustomLink)`
+  display: inline-block;
+  width: 100%;
   background: none;
   transition: color .3s;
   &:hover {
-    color: ${colors.red}
+    color: ${({to}) => `var(--${to.substr(1)})`};
   }
 `
 
@@ -83,7 +89,7 @@ class Header extends Component {
             isOpen={isOpen}
           />
           <HeaderNavigation>
-            <ul>
+            <NavList>
               <ListItem>
                 <HeaderLink 
                   to="/skills"
@@ -120,7 +126,7 @@ class Header extends Component {
                   Contact
                 </HeaderLink>
               </ListItem>           
-            </ul>
+            </NavList>
           </HeaderNavigation>
           <HeaderSocialLinks color={linkColor} />
           <Hamburger isOpen={isOpen} onClickHandler={this.toggle}/>
