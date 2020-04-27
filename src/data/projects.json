@@ -1,5 +1,21 @@
 [
     {
+        "name": "Covid-19 Statistics",
+        "description": "A Covid-19 tracker app built using Vue.",
+        "tech": ["Vue", "Vuex", "HTML5", "CSS3", "Tailwind CSS"],
+        "img": "covidstats.png",
+        "links": [
+            {
+                "name": "repo",
+                "url": "https://github.com/taweb/covid-19-tracker"
+            },
+            {
+                "name": "app",
+                "url": "https://www.covid.tatherton.com/" 
+            }
+        ]
+    },
+    {
         "name": "Conway Game of Life",
         "description": "An attempt to recreate the classic 1970s cellular evolution game using React.",
         "tech": ["React", "HTML5", "CSS3"],
